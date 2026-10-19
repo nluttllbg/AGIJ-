@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --verde-950: #0C1D13;
+    --verde-900: #122A1D;
+    --verde-800: #1B3A29;
+    --verde-700: #275238;
+    --verde-600: #2F6B46;
+    --paper: #F6F4EC;
+    --paper-2: #EFEBDF;
+    --gold: #B78A3C;
+    --gold-soft: #D8B36A;
+    --gold-ink: #8A6524;
+    --wa: #1FAE55;
+    --wa-dark: #179A49;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.font-display {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* Animação Ken Burns para as fotografias */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1.2%, 1%);
+  }
+  100% {
+    transform: scale(1.04) translate(1.2%, -1%);
+  }
+}
+
+.kenburns-anim {
+  animation: kenburns 24s ease-in-out infinite alternate;
+}
+
+/* Pulso vivo do botão WhatsApp */
+@keyframes floatPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scale(1.38);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.38);
+    opacity: 0;
+  }
+}
+
+.animate-float-pulse {
+  animation: floatPulse 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+/* Shimmer dourado suave para molduras */
+@keyframes goldGlow {
+  0%, 100% {
+    border-color: rgba(183, 138, 60, 0.5);
+    box-shadow: 0 0 15px rgba(183, 138, 60, 0.08);
+  }
+  50% {
+    border-color: rgba(216, 179, 106, 0.85);
+    box-shadow: 0 0 24px rgba(183, 138, 60, 0.22);
+  }
+}
+
+.animate-gold-glow {
+  animation: goldGlow 4s ease-in-out infinite;
+}
+
+/* Efeito de revelação de texto do hero */
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-word-in {
+  animation: wordIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Suave ondulação nas folhas / ícones decorativos */
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.animate-sway {
+  animation: gentleSway 5s ease-in-out infinite;
+}
